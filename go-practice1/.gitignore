@@ -1,0 +1,29 @@
+# Binaries for programs
+*.exe
+*.dll
+*.so
+*.dylib
+*.wasm
+*.o
+*.a
+
+# Go build cache and module cache
+/pkg/
+/bin/
+/vendor/
+go.work.sum
+
+# Test results
+*.test
+*.out
+
+# Editor-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Environment variables and sensitive data (if not managed otherwise)
+.env
