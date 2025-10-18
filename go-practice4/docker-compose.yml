@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: practice4
+      POSTGRES_USER: postgres4
+      POSTGRES_PASSWORD: postgres4
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./users.sql:/docker-entrypoint-initdb.d/users.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres4 -d practice4"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
